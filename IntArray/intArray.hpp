@@ -25,7 +25,7 @@ public:
     IntArray();
     IntArray(int num);
     IntArray(int start, int end);
-    IntArray(const IntArray& original);
+    IntArray(const IntArray&);
     ~IntArray();
     void setName(string name);
     friend ostream& operator<<(ostream& os,const IntArray& a);    // overloads << operator
@@ -35,6 +35,7 @@ public:
     int low() const;
     int high() const;
     string getName() const;
+    int getCapacity() const;
     
     
     

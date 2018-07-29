@@ -45,11 +45,11 @@ IntArray::IntArray(int start, int end) {
 };
 
 IntArray::IntArray(const IntArray& original) {
-    capacity = original.capacity;
+    capacity = original.getCapacity();
     size = original.size;
     lower = original.lower;
     upper = original.upper;
-    arr = new int[size];
+    arr = new int[capacity];
     for (int i = lower; i <= upper; i++) {
         arr[i] = original.arr[i];
     }
@@ -78,6 +78,22 @@ int& IntArray::operator[](int index) {
     return arr[index];
 };
 
+
+IntArray& IntArray::operator=(const IntArray& right) {
+    if (right.capacity > capacity) {
+        cout << "Runtime error: Length mismatch" << endl;
+        
+        cout << "Diagnostic: Unable to assign, lengths do not match up." << endl;
+    }
+    int counter = right.lower;
+    
+    for (int i = lower; i <= upper; i++) {
+        arr[i] = right.arr[counter];
+        counter++;
+    }
+    return *this;
+};
+
 void IntArray::initialize() {
     for (int i = lower; i < capacity; i++) {
         arr[i] = 0;
@@ -101,4 +117,8 @@ int IntArray::low() const {
 
 int IntArray::high() const {
     return upper;
+}
+
+int IntArray::getCapacity() const {
+    return capacity;
 }
