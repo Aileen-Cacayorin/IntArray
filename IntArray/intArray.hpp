@@ -48,8 +48,6 @@ private:
     string arrName;
     void initialize();
     
-    
-    
-    
 };
+
 #endif /* intArray_hpp */

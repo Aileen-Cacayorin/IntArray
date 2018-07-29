@@ -33,8 +33,8 @@ IntArray::IntArray(int num) {
 };
 
 IntArray::IntArray(int start, int end) {
-    capacity = abs(end) - abs(start) + 1;
-    size = end;
+    size = abs(end-start);
+    capacity = size + 1;
     lower = start;
     upper = end;
     arr = new int[size];
@@ -71,16 +71,16 @@ ostream& operator<<(ostream& os, const IntArray& a) {
 
 //* overloads [] operator *//
 int& IntArray::operator[](int index) {
-    if (index > size) {
+    if (index > upper) {
         cout << "Run-time Error: Illegal Index." << endl;
-        cout << "Diagnostic: Index cannot be bigger than size" << endl;
+        cout << "Diagnostic: Index out of bounds" << endl;
     }
     return arr[index];
 };
 
 
 IntArray& IntArray::operator=(const IntArray& right) {
-    if (right.capacity > capacity) {
+    if (right.capacity != capacity) {
         cout << "Runtime error: Length mismatch" << endl;
         
         cout << "Diagnostic: Unable to assign, lengths do not match up." << endl;
@@ -122,3 +122,5 @@ int IntArray::high() const {
 int IntArray::getCapacity() const {
     return capacity;
 }
+
+
