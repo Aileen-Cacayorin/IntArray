@@ -34,6 +34,7 @@ public:
     bool operator==(const IntArray&);           // overloads == operator //
     bool operator!=(const IntArray&);
     friend IntArray operator+(IntArray, IntArray);
+    void operator+=(const IntArray&);
     int low() const;
     int high() const;
     string getName() const;

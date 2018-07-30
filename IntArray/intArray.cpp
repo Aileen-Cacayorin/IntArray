@@ -120,7 +120,7 @@ bool IntArray::operator!=(const IntArray& comp) {
 
 //* overloads + operator *//
 
-    IntArray operator+(IntArray a1, IntArray a2) {
+IntArray operator+(IntArray a1, IntArray a2) {
     IntArray temp(a1);
     for (int i = 0; i < temp.getCapacity(); i++) {
         temp.arr[i] += a2.arr[i];
@@ -128,6 +128,15 @@ bool IntArray::operator!=(const IntArray& comp) {
     return IntArray(temp);
     
 };
+
+//* overloads += operator *//
+void IntArray::operator+=(const IntArray& add) {
+    for (int i = 0; i < capacity; i++ ) {
+        arr[i]+=  add.arr[i];
+    }
+};
+
+
 
 void IntArray::setName(string name) {
     arrName = name;
