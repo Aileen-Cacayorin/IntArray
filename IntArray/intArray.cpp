@@ -118,6 +118,17 @@ bool IntArray::operator!=(const IntArray& comp) {
     return !(*this == comp);
 };
 
+//* overloads + operator *//
+
+    IntArray operator+(IntArray a1, IntArray a2) {
+    IntArray temp(a1);
+    for (int i = 0; i < temp.getCapacity(); i++) {
+        temp.arr[i] += a2.arr[i];
+    }
+    return IntArray(temp);
+    
+};
+
 void IntArray::setName(string name) {
     arrName = name;
 };

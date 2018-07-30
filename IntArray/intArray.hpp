@@ -33,6 +33,7 @@ public:
     IntArray& operator=(const IntArray&);       // overloads assignemtn operator
     bool operator==(const IntArray&);           // overloads == operator //
     bool operator!=(const IntArray&);
+    friend IntArray operator+(IntArray, IntArray);
     int low() const;
     int high() const;
     string getName() const;
