@@ -56,9 +56,8 @@ IntArray::IntArray(const IntArray& original) {
 };
 
 
-
 IntArray::~IntArray() {
-    delete [] arr;
+    delete[] arr;
 };
 
 
@@ -78,6 +77,23 @@ int& IntArray::operator[](int index) {
     return arr[index];
 };
 
+//* overloads = operator *//
+
+IntArray& IntArray::operator=(const IntArray& right) {
+    if (right.capacity != capacity) {
+        cout << "Runtime error: Length mismatch" << endl;
+        
+        cout << "Diagnostic: Unable to assign, lengths do not match up." << endl;
+    }
+    int counter = right.lower;
+    
+    for (int i = lower; i <= upper; i++) {
+        arr[i] = right.arr[counter];
+        counter++;
+    }
+    return *this;
+};
+
 //* overloads == operator *//
 
 bool IntArray::operator==(const IntArray& comp) {
@@ -95,22 +111,11 @@ bool IntArray::operator==(const IntArray& comp) {
         return 0;
     }
     
-    
-    
-}
-IntArray& IntArray::operator=(const IntArray& right) {
-    if (right.capacity != capacity) {
-        cout << "Runtime error: Length mismatch" << endl;
-        
-        cout << "Diagnostic: Unable to assign, lengths do not match up." << endl;
-    }
-    int counter = right.lower;
-    
-    for (int i = lower; i <= upper; i++) {
-        arr[i] = right.arr[counter];
-        counter++;
-    }
-    return *this;
+};
+
+// overloads != operator //
+bool IntArray::operator!=(const IntArray& comp) {
+    return (*this == comp);
 };
 
 void IntArray::setName(string name) {
@@ -120,8 +125,6 @@ void IntArray::setName(string name) {
 string IntArray::getName()  const{
     return arrName;
 }
-
-
 
 int IntArray::low() const {
     return lower;
