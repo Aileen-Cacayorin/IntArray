@@ -16,25 +16,25 @@ using namespace std;
 
 IntArray::IntArray() {
     capacity = 10;
-    size = capacity-1;
+    size = capacity;
     lower = 0;
     upper = 9;
     arr = new int[size];
     
-}
+};
 
 IntArray::IntArray(int num) {
-    size = num -1;
+    size = num;
     capacity = num;
     lower = 0;
-    upper = size;
+    upper = size-1;
     arr = new int[size];
     
 };
 
 IntArray::IntArray(int start, int end) {
-    size = abs(end-start);
-    capacity = size + 1;
+    size = abs(end-start)+1;
+    capacity = size;
     lower = start;
     upper = end;
     arr = new int[size];
@@ -49,8 +49,8 @@ IntArray::IntArray(const IntArray& original) {
     size = original.size;
     lower = original.lower;
     upper = original.upper;
-    arr = new int[capacity];
-    for (int i = lower; i <= upper; i++) {
+    arr = new int[size];
+    for (int i = 0; i < capacity; i++) {
         arr[i] = original.arr[i];
     }
 };
@@ -63,8 +63,11 @@ IntArray::~IntArray() {
 
 //* overloads << operator  *//
 ostream& operator<<(ostream& os, const IntArray& a) {
-    for (int i = a.low(); i <= a.high(); i++ )
-        os << a.getName() <<"[" << i << "]" << a.arr[i] << endl;
+    int counter = a.low();
+    for (int i = 0; i < a.getCapacity(); i++ ) {
+            os << a.getName() <<"[" << counter << "]" << "=" << a.arr[i] <<" ";
+            counter++;
+        }
     return os;
 };
 
@@ -74,7 +77,7 @@ int& IntArray::operator[](int index) {
         cout << "Run-time Error: Illegal Index." << endl;
         cout << "Diagnostic: Index out of bounds" << endl;
     }
-    return arr[index];
+    return arr[index-lower];
 };
 
 //* overloads = operator *//
@@ -85,11 +88,10 @@ IntArray& IntArray::operator=(const IntArray& right) {
         
         cout << "Diagnostic: Unable to assign, lengths do not match up." << endl;
     }
-    int counter = right.lower;
-    
-    for (int i = lower; i <= upper; i++) {
-        arr[i] = right.arr[counter];
-        counter++;
+
+
+    for (int i = 0; i < capacity; i++) {
+        arr[i] = right.arr[i];
     }
     return *this;
 };
@@ -124,18 +126,18 @@ void IntArray::setName(string name) {
 
 string IntArray::getName()  const{
     return arrName;
-}
+};
 
 int IntArray::low() const {
     return lower;
-}
+};
 
 int IntArray::high() const {
     return upper;
-}
+};
 
 int IntArray::getCapacity() const {
     return capacity;
-}
+};
 
 
