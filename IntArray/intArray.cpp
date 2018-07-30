@@ -99,13 +99,11 @@ IntArray& IntArray::operator=(const IntArray& right) {
 //* overloads == operator *//
 
 bool IntArray::operator==(const IntArray& comp) {
-    int counter = comp.low();
     if (comp.capacity == capacity) {
-        for (int i = lower; i <= upper; i++) {
-            if (arr[i] != comp.arr[counter]) {
+        for (int i = 0; i < capacity; i++) {
+            if (arr[i] != comp.arr[i]) {
                 return 0;
             }
-            counter++;
         };
         return 1;
     }
@@ -117,7 +115,7 @@ bool IntArray::operator==(const IntArray& comp) {
 
 // overloads != operator //
 bool IntArray::operator!=(const IntArray& comp) {
-    return (*this == comp);
+    return !(*this == comp);
 };
 
 void IntArray::setName(string name) {
