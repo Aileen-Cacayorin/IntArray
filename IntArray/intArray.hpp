@@ -31,7 +31,7 @@ public:
     friend ostream& operator<<(ostream& os,const IntArray& a);    // overloads << operator
     int& operator[](int index);             // overloads [] operator
     IntArray& operator=(const IntArray&);       // overloads assignemtn operator
-    
+    bool operator==(const IntArray&);
     int low() const;
     int high() const;
     string getName() const;
@@ -46,8 +46,6 @@ private:
     int upper;
     int *arr;
     string arrName;
-    void initialize();
-    
 };
 
 #endif /* intArray_hpp */

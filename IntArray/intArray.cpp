@@ -78,7 +78,26 @@ int& IntArray::operator[](int index) {
     return arr[index];
 };
 
+//* overloads == operator *//
 
+bool IntArray::operator==(const IntArray& comp) {
+    int counter = comp.low();
+    if (comp.capacity == capacity) {
+        for (int i = lower; i <= upper; i++) {
+            if (arr[i] != comp.arr[counter]) {
+                return 0;
+            }
+            counter++;
+        };
+        return 1;
+    }
+    else {
+        return 0;
+    }
+    
+    
+    
+}
 IntArray& IntArray::operator=(const IntArray& right) {
     if (right.capacity != capacity) {
         cout << "Runtime error: Length mismatch" << endl;
@@ -93,13 +112,6 @@ IntArray& IntArray::operator=(const IntArray& right) {
     }
     return *this;
 };
-
-void IntArray::initialize() {
-    for (int i = lower; i < capacity; i++) {
-        arr[i] = 0;
-    }
-};
-
 
 void IntArray::setName(string name) {
     arrName = name;
