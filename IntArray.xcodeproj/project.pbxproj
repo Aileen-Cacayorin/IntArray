@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D2659D82210E7D0500F3D40C /* iadrv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2659D81210E7D0500F3D40C /* iadrv.cpp */; };
 		D2659D86210E7D2E00F3D40C /* intArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2659D84210E7D2E00F3D40C /* intArray.cpp */; };
+		D2659D88210EB8C000F3D40C /* iadrv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2659D87210EB8BF00F3D40C /* iadrv.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +25,10 @@
 
 /* Begin PBXFileReference section */
 		D2659D77210E7CE700F3D40C /* IntArray */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = IntArray; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2659D81210E7D0500F3D40C /* iadrv.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = iadrv.cpp; path = "../../../../Downloads/3 - IntArray Lab Data Files/iadrv.cpp"; sourceTree = "<group>"; };
-		D2659D83210E7D0D00F3D40C /* iadrv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iadrv.h; path = "../../../../Downloads/3 - IntArray Lab Data Files/iadrv.h"; sourceTree = "<group>"; };
 		D2659D84210E7D2E00F3D40C /* intArray.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = intArray.cpp; sourceTree = "<group>"; };
 		D2659D85210E7D2E00F3D40C /* intArray.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = intArray.hpp; sourceTree = "<group>"; };
+		D2659D87210EB8BF00F3D40C /* iadrv.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = iadrv.cpp; sourceTree = "<group>"; };
+		D2659D89210EB8C900F3D40C /* iadrv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iadrv.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +45,7 @@
 		D2659D6E210E7CE700F3D40C = {
 			isa = PBXGroup;
 			children = (
-				D2659D79210E7CE700F3D40C /* IntArray */,
+				D2659D79210E7CE700F3D40C /* CacayorinAileen-IntArrayLab */,
 				D2659D78210E7CE700F3D40C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,15 +58,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D2659D79210E7CE700F3D40C /* IntArray */ = {
+		D2659D79210E7CE700F3D40C /* CacayorinAileen-IntArrayLab */ = {
 			isa = PBXGroup;
 			children = (
-				D2659D81210E7D0500F3D40C /* iadrv.cpp */,
-				D2659D83210E7D0D00F3D40C /* iadrv.h */,
+				D2659D87210EB8BF00F3D40C /* iadrv.cpp */,
+				D2659D89210EB8C900F3D40C /* iadrv.h */,
 				D2659D84210E7D2E00F3D40C /* intArray.cpp */,
 				D2659D85210E7D2E00F3D40C /* intArray.hpp */,
 			);
-			path = IntArray;
+			path = "CacayorinAileen-IntArrayLab";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +126,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2659D82210E7D0500F3D40C /* iadrv.cpp in Sources */,
+				D2659D88210EB8C000F3D40C /* iadrv.cpp in Sources */,
 				D2659D86210E7D2E00F3D40C /* intArray.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

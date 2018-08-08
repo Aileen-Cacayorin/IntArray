@@ -1,9 +1,14 @@
-//
+// Name: Aileen Cacayorin
+// Palomar ID: 011519388
+// Title: IntArray Lab
+// Compiler: XCode 9.2
+
 //  intArray.cpp
 //  IntArray
 //
 //  Created by Aileen Cacayorin on 7/29/18.
 //  Copyright © 2018 com.aileenbull. All rights reserved.
+
 //
 #include <iostream>
 #include <iomanip>
@@ -13,6 +18,8 @@
 #include "intArray.hpp"
 
 using namespace std;
+
+extern ofstream csis;
 
 IntArray::IntArray() {
     capacity = 10;
@@ -40,7 +47,9 @@ IntArray::IntArray(int start, int end) {
     arr = new int[size];
     if ( start > end ) {
         cout << "Run-time Error: Illegal Array Bounds." << endl;
+        csis << "Run-time Error: Illegal Array Bounds." << endl;
         cout << "Diagnostic: 1st indice cannot be bigger than 2nd indice" << endl;
+        csis << "Diagnostic: 1st indice cannot be bigger than 2nd indice" << endl;
     }
 };
 
@@ -65,7 +74,7 @@ IntArray::~IntArray() {
 ostream& operator<<(ostream& os, const IntArray& a) {
     int counter = a.low();
     for (int i = 0; i < a.getCapacity(); i++ ) {
-            os << a.getName() <<"[" << counter << "]" << "=" << a.arr[i] <<" ";
+            os << a.getName() <<"[" << counter << "]" << "=" << a.arr[i] << endl;
             counter++;
         }
     return os;
@@ -75,7 +84,9 @@ ostream& operator<<(ostream& os, const IntArray& a) {
 int& IntArray::operator[](int index) {
     if (index > upper) {
         cout << "Run-time Error: Illegal Index." << endl;
+        csis << "Run-time Error: Illegal Index." << endl;
         cout << "Diagnostic: Index out of bounds" << endl;
+        csis << "Diagnostic: Index out of bounds" << endl;
     }
     return arr[index-lower];
 };
@@ -85,8 +96,9 @@ int& IntArray::operator[](int index) {
 IntArray& IntArray::operator=(const IntArray& right) {
     if (right.capacity != capacity) {
         cout << "Runtime error: Length mismatch" << endl;
-        
+        csis << "Runtime error: Length mismatch" << endl;
         cout << "Diagnostic: Unable to assign, lengths do not match up." << endl;
+        csis << "Diagnostic: Unable to assign, lengths do not match up." << endl;
     }
 
 
